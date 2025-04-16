@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="checkbox"] {
+            display: inline-block; /* Align checkbox with label */
+            width: auto;
+            margin-right: 5px;
+            margin-bottom: 15px; /* Add more space below checkbox */
+        }
+        label[for="acceptTerms"] {
+            display: inline; /* Align label with checkbox */
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .error-message {
+             color: red;
+             font-size: 0.9em;
+             margin-top: -5px; /* Adjust position relative to input */
+             margin-bottom: 10px;
+             display: none; /* Hide by default */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <div id="dobError" class="error-message">Age must be between 18 and 55.</div>
+
+
+        <input type="checkbox" id="acceptTerms" name="acceptTerms">
+        <label for="acceptTerms">Accept Terms & Conditions</label>
+        <br> <!-- Added break for better spacing -->
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Entries</h2>
+    <div id="userTableContainer">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Dob</th>
+                    <th>Accepted terms?</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Saved entries will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Important: Ensure script.js is in the same http-server folder -->
+    <script src="script.js"></script>
+</body>
+</html>
